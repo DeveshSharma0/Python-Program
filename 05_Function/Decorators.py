@@ -57,45 +57,88 @@
   # decorator with argument
 
 
-def changeCase(n):
-    def changeCase(fun):
-        def myInner():
-            if n == 1:
-                a = fun().lower()
-            else:
-                a = fun().upper()
-            return a
-        return myInner
-    return changeCase
-
-    #Use case.......
-
-@changeCase(1)
-def myFunction():
-    return "hello os "
-
-print(myFunction())
-
-
 
                             # Program_5
 
-# multypal Decorator.....
+#test code ....
 
-def changeCase(fun):
-    def myInner():
-        return fun().upper()
-    return myInner
+# def myFunction(fun):
+#     def myInner(x):
+#         dev = "hello" ,fun(x)
+#         return dev
+#     return myInner
 
-def add(fun):
-    def myInner():
-        return "hello " + fun() + " have a good day!"
-    return myInner
+# def decorator(fun):
+#     def date(y):
+#         return fun(y)
+#     return date
 
-    
 
-@changeCase
-@add
+# @myFunction
+# def myFun(name):
+#     return name
+
+# @decorator
+# def Tarek(num):
+#     return num
+
+# print(Tarek("3/3/3000" ))
+# print(myFun("devesh"))
+
+
+
+                                         #program_6
+#Presrving Function Matadata
+
 def myFunction():
-    return "devesh"
-print(myFunction())
+    return "have a great day"
+
+## attributes........
+
+# print(myFunction,__name__)
+# print(myFunction.__doc__)
+# print(myFunction.__code__)
+# print(myFunction.__defaults__)
+# print(myFunction.__dict__)
+# print(myFunction.__kwdefaults__)
+# print(myFunction.__module__)
+
+
+                               # Program_7
+
+#decoator with Presevering function matadat 
+
+# def myFunction(fun):
+#     def myInner():
+#         return fun().upper()
+#     return myInner
+
+# @myFunction
+
+# def changeCase():
+#     return "have a good Day"
+
+# print(changeCase.__name__)
+
+
+                                         # Program_8
+# functools.wraps use case in decorator .....
+
+# import functools
+
+# def changeCase(func):
+
+#     @functools.wraps(func)
+#     def myInner():
+#         return func().upper()
+#     return myInner
+
+
+# @changeCase
+# def myFunction():
+#     return "have a Good day"
+
+# print(myFunction.__name__)
+
+
+
